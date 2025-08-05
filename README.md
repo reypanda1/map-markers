@@ -1,7 +1,7 @@
-# Map Markers - Sistema de Marcadores Optimizado
+# Map Markers - Sistema de Marcadores
 
 ## Descripción
-Sistema optimizado para gestionar marcadores dinámicos en el mapa de GTA V. Todo se maneja desde archivos JSON, eliminando la necesidad de menús en el juego.
+Sistema para gestionar marcadores dinámicos en el mapa de GTA V. Todo se maneja desde archivos JSON, eliminando la necesidad de menús en el juego.
 
 ## Características
 - ✅ **Sin menús** - Todo se gestiona desde archivos
@@ -115,6 +115,7 @@ El archivo `config.lua` permite personalizar:
 - **Blips**: Escala, transparencia, tamaño de área
 - **Validación**: Rangos de iconos y colores permitidos
 - **Debug**: Mensajes de depuración opcionales
+Disponible en proximas actualizaciones
 
 ### Permisos
 El comando `/marks` utiliza el grupo admin estándar de FiveM. Para usarlo, asegúrate de que el jugador tenga permisos de administrador:
@@ -147,3 +148,4 @@ add_ace identifier.steam:110000xxxxxxxx command allow
 - QBCore (compatible pero no requiere)
 
 - Cualquier framework de servidor 
+
