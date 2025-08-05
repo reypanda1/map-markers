@@ -81,7 +81,7 @@ O reinicia el recurso:
 restart map_markers
 ```
 
-### Validación de datos mejorada
+### Validación de datos
 El sistema valida automáticamente todos los marcadores y **ignora los mal configurados**, notificando al administrador:
 
 - **Campos faltantes o vacíos**: Detecta campos requeridos que faltan o están vacíos
@@ -145,4 +145,5 @@ add_ace identifier.steam:110000xxxxxxxx command allow
 ## Compatibilidad
 - FiveM
 - QBCore (compatible pero no requiere)
+
 - Cualquier framework de servidor 
