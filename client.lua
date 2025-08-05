@@ -10,10 +10,10 @@ local function ParseVector3(str)
     return tonumber(x), tonumber(y), tonumber(z)
 end
 
--- Refresh blips (optimizado para muchos marcadores)
+-- Refresh blips
 local function RefreshBlips()
     local currentTime = GetGameTimer()
-    if currentTime - lastRefreshTime < 100 then return end -- Throttling para evitar spam
+    if currentTime - lastRefreshTime < 100 then return end
     for i = #blipHandles, 1, -1 do
         local handles = blipHandles[i]
         if handles.icon and DoesBlipExist(handles.icon) then 
