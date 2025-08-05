@@ -146,7 +146,157 @@ add_ace identifier.steam:110000xxxxxxxx command allow
 ## Compatibilidad
 - FiveM
 - QBCore (compatible pero no requiere)
+- Cualquier framework de servidor
 
-- Cualquier framework de servidor 
+  # MAP Markers - Marker System
+
+## Description
+System to manage dynamic markers on the map of GTA V. Everything is handled from JSON files, eliminating the need for menus in the game.
+
+## Characteristics
+- ✅ ** Without menus ** - Everything is managed from files
+- ✅ ** Default file ** - It is automatically created with an example marker
+- ✅ ** Simple validation ** - Without unnecessary cache, without loops
+- ✅ ** Minimum configuration ** - Only the essential
+- ✅ ** Efficient synchronization ** - Only when necessary
+- ✅ ** Simple error management ** - Ignore bad markers automatically
+- ✅ ** Command /Marks ** - Instant List (Solo Adins)
+
+## Facility
+1. Place the resource in your `Resource/` folder
+2. Add `reure map_markers` to your` server.cfg`
+3. Restart the server
+
+## Use
+
+### First time
+When starting the resource for the first time, the `blips_data` file will be automatically created with a default score.
+
+### Edit markers
+To add, edit or delete markers, simply modify the `blips_data.json`:
+
+`` JSON
+[ 
+{ 
+"Title": "Name of the Marker", 
+"Vector3": "Vector3 (-1144.100, 242,897, 65,140)", 
+"Icon": 7, 
+"Color": 13, 
+"Areavisible": False 
+}
+]
+``
+
+### parameters
+- ** Title **: Name that appears on the scoreboard
+- ** Vector3 **: Coordinates of the score
+-** Icon **: Icon ID (1-170, excluding 60-64)
+- ** Color **: color id (0-84)
+- ** Areavisible **: `True` to show area,` fals` to hide
+
+### Rechargar markers
+After editing the file, use the command:
+``
+/Marks
+``
+
+** Example of use: **
+``
+/Marks
+📌 MAP Markers: markers listed on the server console
+``
+
+** Exit exit in server console: **
+``
+📌 Map Markers: Markers: 30 Total | Page 1/3
+
+[Map Markers] === Page 1/3 ===
+[MAP Markers] 1. "Gasolinera Centro" (-48, -1757, 29)
+[Map Markers] 2. "Main Hospital" (295, -1446, 29)
+[MAP Markers] 3. "Central Bank" (150, -1040, 29)
+[MAP Markers] 4. "North Police Station" (441, -982, 30)
+[MAP Markers] 5. "Public Garage" (215, -805, 30)
+[MAP Markers] 6. "Mechanical Workshop" (-337, -135, 39)
+[MAP Markers] 7. "Clothing store" (425, -806, 29)
+[MAP Markers] 8. "Restaurant" (-1193, -768, 17)
+[Map Markers] 9. "Pharmacy" (318, -1076, 29)
+[Map Markers] 10. "Northern Gasolinera" (49, -1761, 29)
+[Map Markers] ====================
+
+💡 Use: /Marks [page] [search] | Ex: /Marks 2 Gasolinera
+``
+
+Or restart the resource:
+``
+Restart Map_markers
+``
+
+### Data validation
+The system automatically validates all markers and ** ignores the poorly configured **, notifying the administrator:
+
+- ** missing or empty fields **: detects required fields that are missing or empty
+- ** Invalid coordinates **: Validate that x, y, z are valid numbers (no 0, null or empty)
+- ** incorrect types **: validate that the data is of the correct type
+- ** Invalid ranges **: Verify what icons and colors are in valid ranges
+- ** Problematic markers **: Identify exactly which marker has errors
+- ** Automatic Summary **: Sample statistics of valid markers vs. invalids
+
+** Example of console validation: **
+``
+[Map Markers] === Validation summary ===
+[Map Markers] Total markers: 9
+[Map Markers] Valid markers: 1
+[Map Markers] Invalid markers: 8
+[Map Markers] ========================
+[MAP Markers] Marker 2 "": Invalid title
+[Map Markers] 3 "No Coordinate X": Invalid coordinates: x x
+[Map Markers] 4 "coordinate and empty": Invalid coordinates: and
+[Map Markers] 5 "Invalid Icon": Invalid icon
+[Map Markers] 6 "Out -Range Color": Inval
+[Map Markers] 7 "Missing color": missing fields: color
+[Map Markers] 8 "invalid areavisible score": invalid areavisible
+[Map Markers] 9 "Coordinates at zero": Invalid coordinates: x, y, z
+[Map Markers] ========================
+``
+
+### Configuration
+The `config.lua` file allows you to customize:
+- ** Performance **: Throttling of save and notifications
+- ** Blips **: Scale, transparency, area size
+- ** Validation **: icon ranges and allowed colors
+- ** Debug **: Optional purification messages
+- Currently not available until next updates (you can try to configure it but it is not recommended since the configuration is going wrong)
+
+### Permissions
+The `/Marks` command uses the FIMEm standard Group. To use it, make sure the player has administrator permits:
+
+** For Group of Administrators (recommended): **
+``
+Add_ace Group.admin Command Allow
+``
+
+** For specific player: **
+``
+Add_ace identifier.steam: 110000xxxxxxxxx command allow
+``
+
+** Note: ** The permission `Command` is the standard FIVEM permission for administrator commands.
+
+### Commands
+- **/Marks ** - List all markers on the server console (Solo Adins) 
+- ** Pagination **: `/Marks [page]` - Show 10 markers per page 
+- ** Search **: `/Marks [page] [text]` - Look for markers by name 
+- ** Examples **: 
+- `/Marks` - First page 
+- `/Marks 2` - Second page 
+- `/Marks 1 Gasolinera` - Find gas stations on the first page 
+- `/Marks 2 Hospital` - Find hospitals on the second page 
+- Requires FICEM Standard Administrator Permits
+
+## Compatibility
+- FIVEM
+- Qbcore (compatible but does not require)
+- Any server framework
+
 
 
