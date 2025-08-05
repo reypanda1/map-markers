@@ -115,7 +115,7 @@ El archivo `config.lua` permite personalizar:
 - **Blips**: Escala, transparencia, tamaño de área
 - **Validación**: Rangos de iconos y colores permitidos
 - **Debug**: Mensajes de depuración opcionales
-Disponible en proximas actualizaciones
+- Actualmente no disponible hasta proximas actualizaciones(puedes intentar configurarlo pero no es recomendado ya que va mal la configuracion)
 
 ### Permisos
 El comando `/marks` utiliza el grupo admin estándar de FiveM. Para usarlo, asegúrate de que el jugador tenga permisos de administrador:
@@ -148,4 +148,5 @@ add_ace identifier.steam:110000xxxxxxxx command allow
 - QBCore (compatible pero no requiere)
 
 - Cualquier framework de servidor 
+
 
