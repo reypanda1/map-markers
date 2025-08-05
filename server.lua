@@ -3,6 +3,9 @@ local blipsCache = nil
 local lastSaveTime = 0
 local isLoaded = false
 
+print('^2[Rey_Panda]^7 Gracias por usar mi script!')
+print('^2[Rey_Panda]^7 Thanks for using my script!')
+
 -- Parsear string vector3
 local function ParseVector3(str)
     if type(str) ~= 'string' then return nil, nil, nil end
